@@ -36,7 +36,7 @@ func connect(r *request, conn net.Conn, timer *time.Timer) {
 	}
 	tcpConn, err := net.DialTCP("tcp4", nil, addr)
 	if err != nil {
-		logutils.Error("Failed to DialTCP. error: ", err)
+		logutils.Info("Failed to DialTCP. error: ", err)
 		writeError(conn, err.Error(), http.StatusBadGateway)
 		return
 	}
