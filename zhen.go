@@ -61,6 +61,7 @@ func main() {
 				if handle(req, conn, timer) {
 					_ = conn.Close()
 				}
+				cache = ""
 			}
 			timer.Stop()
 			close(quitChan)
